@@ -1,6 +1,6 @@
-import Header from "./components/NotificationButton/Header"
-import SalesCard from "./components/SalesCard"
-import '../src/index.css'
+import Header from "./components/Header";
+import SalesCard from "./components/SalesCard";
+import '../src/index.css';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         </section>
       </main>      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
