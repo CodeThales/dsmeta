@@ -12,6 +12,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class SaleService {
@@ -28,4 +29,16 @@ public class SaleService {
 
         return repository.findSales(min, max, pageable);
     }
+
+    public Sale addNewSale(Sale sale){
+
+        if(Objects.isNull(sale.getDate())){
+
+            LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
+            Sale newSale = new Sale(sale.getSellerName(), sale.getVisited(), sale.getDeals(), sale.getAmount(), today);
+            return repository.save(sale);
+        }
+        return repository.save(sale);
+    }
+
 }
