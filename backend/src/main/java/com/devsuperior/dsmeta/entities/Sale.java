@@ -19,6 +19,14 @@ public class Sale {
     public Sale(){
     }
 
+    public Sale(String sellerName, Integer visited, Integer deals, Double amount, LocalDate date) {
+        this.sellerName = sellerName;
+        this.visited = visited;
+        this.deals = deals;
+        this.amount = amount;
+        this.date = date;
+    }
+
     public Long getId() {
         return id;
     }
